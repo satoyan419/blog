@@ -1,0 +1,7 @@
+// ---------- 共通部分 ----------
+@use 'base' as *;
+@use 'header' as *;
+@use 'footer' as *;
+
+// ---------- 各ページ ----------
+@use 'home' as *;

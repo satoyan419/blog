@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Node.js
+node_modules/
+.node-version
+.npm-version
+
+# Visual Studio Code
+.vscode/

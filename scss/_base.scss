@@ -1,0 +1,48 @@
+// ==============================
+//   base
+// ==============================
+
+@use 'setting' as *;
+
+
+// ---------- reset ----------
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+
+// ---------- base ----------
+body {
+  // https://ics.media/entry/200317/
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(sm) {
+    max-width: 540px;
+  }
+  @include mq(md) {
+    max-width: 720px;
+  }
+  @include mq(lg) {
+    max-width: 960px;
+  }
+  @include mq(xl) {
+    max-width: 1230px;
+  }
+}
