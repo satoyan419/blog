@@ -1,0 +1,30 @@
+// ==============================
+//   reset
+// ==============================
+
+@use 'setting' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing:border-box;
+}
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, figure {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+input, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  appearance: none;
+  background: none;
+}

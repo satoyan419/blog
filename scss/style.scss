@@ -1,7 +1,7 @@
 // ---------- 共通部分 ----------
+@use 'reset' as *;
 @use 'base' as *;
 @use 'header' as *;
+@use 'main' as *;
+@use 'sidebar' as *;
 @use 'footer' as *;
-
-// ---------- 各ページ ----------
-@use 'home' as *;

@@ -19,10 +19,86 @@
   <link rel="icon" href="/favicon.ico">
 </head>
 <body>
-  <header role="banner">
-    <div>
-      <h1>satoyan419.com</h1>
+  <header class="header" role="banner">
+    <div class="header__inner container">
+      <div class="header__branding">
+        <h1 class="header__title">satoyan419.com</h1>
+      </div>
+      <nav class="menu" role="navigation" aria-label="メインメニュー">
+        <button id="menu-button" class="menu__button" aria-controls="menu-list" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div id="menu-panel" class="menu__panel">
+          <ul class="menu__list">
+            <li><a href="zzz">xxx</a></li>
+            <li><a href="zzz">xxx</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </header>
+  <div class="content">
+    <div class="content__inner container">
+      <main role="main" class="content__main archive">
+        <article class="card">
+          <a class="card__link" href="zzz">
+            <figure class="card__figure">
+              <img class="card__image" src="./img/eyecatch.png" alt="">
+            </figure>
+            <div class="card__content">
+              <p class="card__date"><time datetime="2020-09-04">2020年9月4日</time></p>
+              <h2 class="card__title">画像を含めると1GB以上あったので、Git Large File Storageを使ってみた</h2>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a class="card__link" href="zzz">
+            <figure class="card__figure">
+              <img class="card__image" src="./img/eyecatch.png" alt="">
+            </figure>
+            <div class="card__content">
+              <p class="card__date"><time datetime="2020-09-04">2020年9月4日</time></p>
+              <h2 class="card__title">画像を含めると1GB以上あったので、Git Large File Storageを使ってみた</h2>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a class="card__link" href="zzz">
+            <figure class="card__figure">
+              <img class="card__image" src="./img/eyecatch.png" alt="">
+            </figure>
+            <div class="card__content">
+              <p class="card__date"><time datetime="2020-09-04">2020年9月4日</time></p>
+              <h2 class="card__title">画像を含めると1GB以上あったので、Git Large File Storageを使ってみた</h2>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a class="card__link" href="zzz">
+            <figure class="card__figure">
+              <img class="card__image" src="./img/eyecatch.png" alt="">
+            </figure>
+            <div class="card__content">
+              <p class="card__date"><time datetime="2020-09-04">2020年9月4日</time></p>
+              <h2 class="card__title">画像を含めると1GB以上あったので、Git Large File Storageを使ってみた</h2>
+            </div>
+          </a>
+        </article>
+      </main>
+      <!-- /.content__main -->
+      <aside class="content__sidebar sidebar">
+        <section class="sidebar__block">
+          <h2 class="sidebar__title">人気記事</h2>
+        </section>
+      </aside>
+      <!-- /.content__sidebar -->
+    </div>
+  </div>
+  <footer role="contentinfo">
+
+  </footer>
+  <script src="/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+// ==============================
+//   サイドバー
+// ==============================
+
+@use 'setting' as *;
+
+
+// ---------- sidebar ----------
+.sidebar {
+  &__block {
+    padding: 40px 1rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    color: $color-base;
+    background-color: #fff;
+  }
+  &__title {
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 1.5;
+    border-bottom: 3px solid $color-primary;
+  }
+}

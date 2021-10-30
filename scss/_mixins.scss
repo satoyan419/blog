@@ -29,16 +29,7 @@
 
 // media query (hover)
 @mixin mq-hover {
-  @media (hover: hover), (-ms-high-contrast: none) {
+  @media (hover: hover) {
     @content;
-  }
-}
-
-// clearfix
-@mixin clearfix {
-  &::after {
-    content: "";
-    clear: both;
-    display: block;
   }
 }
