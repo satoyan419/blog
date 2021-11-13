@@ -4,6 +4,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sortMediaQueries = require('postcss-sort-media-queries');
 const browserSync = require('browser-sync').create();
+const connectSSI = require('connect-ssi');
 const reload = browserSync.reload;
 
 
@@ -39,7 +40,13 @@ function initialize(done) {
   const jsFiles = ['**/*.js'];
   browserSync.init({
     server: {
-      baseDir: "./"
+      baseDir: "./",
+      middleware: [
+        connectSSI({
+          baseDir: __dirname,
+          ext: '.html'
+        })
+      ]
     }
   });
   watch(htmlFiles).on('change', reload);
