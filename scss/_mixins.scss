@@ -17,7 +17,7 @@
       @content;
     }
   } @else if $breakpoint == xl {
-    @media screen and (min-width: 1250px) {
+    @media screen and (min-width: 1200px) {
       @content;
     }
   } @else {
@@ -28,8 +28,9 @@
 }
 
 // media query (hover)
+// https://black-flag.net/css/20211110-7483.html
 @mixin mq-hover {
-  @media (hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     @content;
   }
 }

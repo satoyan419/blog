@@ -5,6 +5,7 @@
 @use 'setting' as *;
 
 
+// ---------- whole ----------
 body {
   color: $color-base;
   // https://ics.media/entry/200317/
@@ -13,22 +14,11 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-.container {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
+
+// ---------- custom properties ----------
+:root {
+  --gutter-x: 15px;
   @include mq(sm) {
-    max-width: 540px;
-  }
-  @include mq(md) {
-    max-width: 720px;
-  }
-  @include mq(lg) {
-    max-width: 960px;
-  }
-  @include mq(xl) {
-    max-width: 1230px;
+    --gutter-x: 30px;
   }
 }
