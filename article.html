@@ -27,19 +27,19 @@
 <body>
   <!--#include file="svg.html" -->
   <!--#include file="header.html" -->
-  <div class="content">
-    <main role="main" class="content__main">
-      <article class="entry" itemscope itemtype="https://schema.org/BlogPosting">
-        <header class="entry__header">
-          <h1 class="entry__title" itemprop="headline">画像を含めると1GB以上あったので、Git Large File Storageを使ってみた</h1>
-          <div class="entry__meta entry__meta--single">
-            <dl class="entry__date">
+  <div class="body">
+    <main role="main" class="main">
+      <article class="main-entry" itemscope itemtype="https://schema.org/BlogPosting">
+        <header class="main-entry__header">
+          <h1 class="main-entry__title" itemprop="headline">画像を含めると1GB以上あったので、Git Large File Storageを使ってみた</h1>
+          <div class="main-entry__meta main-entry__meta--single">
+            <dl class="main-entry__date">
               <dt><svg role="img" aria-labelledby="title-calendar"><title id="title-calendar">投稿日</title><use href="#ico-calendar"></use></svg></dt>
               <dd><time itemprop="datePublished" datetime="2020-09-04">2020年9月4日</time></dd>
               <dt><svg role="img" aria-labelledby="title-update"><title id="title-update">更新日</title><use href="#ico-update"></use></svg></dt>
               <dd><time itemprop="dateModified" datetime="2020-09-04">2020年9月4日</time></dd>
             </dl>
-            <dl class="entry__author">
+            <dl class="main-entry__author">
               <dt><svg role="img" aria-labelledby="title-author"><title id="title-author">著者</title><use href="#ico-author"></use></svg></dt>
               <dd itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span itemprop="name">庄司 諭史</span>
@@ -47,36 +47,40 @@
                 <link itemprop="sameAs" href="https://twitter.com/satoyan419">
               </dd>
             </dl>
-            <dl class="entry__tag">
+            <dl class="main-entry__tag">
               <dt><svg role="img" aria-labelledby="title-tag"><title id="title-tag">タグ</title><use href="#ico-tag"></use></svg></dt>
               <dd><a href="zzz">タグ</a></dd>
             </dl>
           </div>
           <meta itemprop="description" content="ディスクリプションが入ります。">
-          <figure class="entry__thumbnail">
-            <img itemprop="image" src="./img/eyecatch.png" alt="" width="600" height="315">
-          </figure>
         </header>
-        <section class="entry__body">
-          <div>
-
-          </div>
+        <section class="main-entry__body">
+          <h2>リポジトリのサイズ制限</h2>
+          <p>Gitのリポジトリのサイズについて、GitHubのページには次のように書かれています。</p>
+          <h2>Git Large File Storageの導入方法</h2>
+          <h3>ローカルマシンでの設定</h3>
+          <pre><code class="html">&lt;html&gt;&lt;/html&gt;</code></pre>
         </section>
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="./img/eyecatch.png">
+        </div>
       </article>
+      <aside>
+        <nav class="main-breadcrumb" role="navigation" aria-label="現在位置">
+          <ol class="main-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="https://satoyan419.com/"><span itemprop="name">Home</span></a>
+              <meta itemprop="position" content="1">
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="location">
+              <span itemprop="name">タイトルが入ります。</span>
+              <meta itemprop="position" content="2">
+            </li>
+          </ol>
+        </nav>
+      </aside>
     </main>
     <!--#include file="sidebar.html" -->
-    <nav class="breadcrumb" role="navigation" aria-label="現在位置">
-      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a itemprop="item" href="https://satoyan419.com/"><span itemprop="name">Home</span></a>
-          <meta itemprop="position" content="1">
-        </li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="location">
-          <span itemprop="name">タイトルが入ります。</span>
-          <meta itemprop="position" content="2">
-        </li>
-      </ol>
-    </nav>
   </div>
   <!-- /.content -->
 

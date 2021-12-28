@@ -5,7 +5,12 @@
 @use 'setting' as *;
 
 
-// ---------- sidebar ----------
+// ---------- side ----------
+.side {
+  width: $width-side;
+}
+
+
 .sidebar {
   &__block {
     padding: 40px 1rem;

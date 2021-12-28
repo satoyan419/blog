@@ -5,8 +5,8 @@
 @use 'setting' as *;
 
 
-// ---------- content ----------
-.content {
+// ---------- body ----------
+.body {
   min-height: calc(100vh - 120px);
   width: 100%;
   max-width: calc($width-main + var(--gutter-x) * 2);
@@ -19,27 +19,24 @@
     max-width: 1200px;
     margin-block: 60px;
   }
-  &__main {
-    width: 100%;
-    @include mq(lg) {
-      max-width: $width-main;
-    }
-  }
-  &__side {
-    width: $width-side;
-  }
 }
 
 
-// ---------- archive ----------
-.archive {
-  display: grid;
-  row-gap: 60px;
+// ---------- main ----------
+.main {
+  width: 100%;
+  @include mq(lg) {
+    max-width: $width-main;
+  }
+  &--archive {
+    display: grid;
+    row-gap: 60px;
+  }
 }
 
 
 // ---------- entry ----------
-.entry {
+.main-entry {
   width: 100%;
   margin: auto;
   a {
@@ -55,12 +52,19 @@
   }
   &__title {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     line-height: 1.5;
     a {
       color: $color-base;
       text-decoration: none;
+      @include mq-hover {
+        transition: color 0.2s;
+        &:hover {
+          color: $color-primary;
+          text-decoration: none;
+        }
+      }
     }
   }
   &__meta {
@@ -119,8 +123,7 @@
     a {
       position: relative;
       display: block;
-      width: 100%;
-      max-width: 600px;
+      width: fit-content;
       margin: auto;
       &::after {
         position: absolute;
@@ -140,7 +143,9 @@
     img {
       display: block;
       width: 100%;
+      max-width: 600px;
       height: auto;
+      margin: auto;
     }
   }
   &__desc {
@@ -165,20 +170,15 @@
   }
   &__body {
     h2 {
-      margin-top: 4.5rem;
+      margin-top: 3rem;
       margin-bottom: 0;
       font-size: 1.5rem;
       line-height: 1.5;
     }
     h3 {
-      margin-top: 3rem;
+      margin-top: 2rem;
       margin-bottom: 0;
       font-size: 1.25rem;
-    }
-    h4 {
-      margin-top: 1.5rem;
-      margin-bottom: 0;
-      font-size: 1.125rem;
     }
     p {
       margin-block: 1rem;
@@ -213,24 +213,25 @@
 
 
 // ---------- breadcrumb ----------
-.breadcrumb {
-  ol {
+.main-breadcrumb {
+  margin-top: 60px;
+  &__list {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  li {
-    display: inline;
-    word-break: break-all;
-    &:not(:first-child) {
-      &::before {
-        content: "/";
-        margin: 0 0.5rem;
+    li {
+      display: inline;
+      word-break: break-all;
+      &:not(:first-child) {
+        &::before {
+          content: "/";
+          margin: 0 0.5rem;
+        }
       }
     }
-  }
-  a {
-    color: $color-base;
-    text-decoration: none;
+    a {
+      color: $color-base;
+      text-decoration: none;
+    }
   }
 }
