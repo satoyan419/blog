@@ -10,7 +10,7 @@
   width: 100%;
   height: $height-header;
   background-color: #fff;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--color-border);
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -28,13 +28,13 @@
     align-items: center;
     height: $height-header;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     font-weight: bold;
     a {
       display: flex;
       align-items: center;
       height: 100%;
-      color: $color-base;
+      color: var(--color-base);
       text-decoration: none;
       @include mq-hover {
         transition: opacity 0.2s;
@@ -50,9 +50,9 @@
 // ---------- menu ----------
 .header-menu {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 0;
-  @include mq(sm) {
+  @include mq(md) {
     position: relative;
     top: auto;
   }
@@ -61,7 +61,7 @@
     width: 60px;
     height: 60px;
     z-index: 11;
-    @include mq(sm) {
+    @include mq(md) {
       display: none;
     }
     span {
@@ -72,7 +72,7 @@
       height: 2px;
       border-radius: 1px;
       overflow: hidden;
-      background-color: $color-base;
+      background-color: var(--color-base);
       transition: all 0.2s;
       &:nth-child(1) {
         top: 19px;
@@ -115,7 +115,7 @@
       transform: translateY(0);
       z-index: 10;
     }
-    @include mq(sm) {
+    @include mq(md) {
       position: relative;
       padding-top: 0;
       opacity: 1;
@@ -128,8 +128,8 @@
   &__list {
     margin: 0;
     padding: 0;
-    border-top: 1px solid #ccc;
-    @include mq(sm) {
+    border-top: 1px solid #ddd;
+    @include mq(md) {
       display: flex;
       border-top: none;
       justify-content: flex-end;
@@ -139,10 +139,9 @@
       display: block;
       width: 100%;
       height: 60px;
-      border-bottom: 1px solid #ccc;
-      @include mq(sm) {
+      border-bottom: 1px solid #ddd;
+      @include mq(md) {
         width: auto;
-        height: 80px;
         border-bottom: none;
       }
     }
@@ -152,7 +151,7 @@
       align-items: center;
       width: 100%;
       height: 100%;
-      color: $color-base;
+      color: var(--color-base);
       line-height: 1.5;
       text-decoration: none;
     }

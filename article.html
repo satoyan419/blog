@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/atom-one-dark.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
   <script defer src="./js/main.js"></script>
   <script src="./js/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
@@ -59,31 +59,28 @@
           <p>Gitのリポジトリのサイズについて、GitHubのページには次のように書かれています。</p>
           <h2>Git Large File Storageの導入方法</h2>
           <h3>ローカルマシンでの設定</h3>
-          <pre><code class="html">&lt;html&gt;&lt;/html&gt;</code></pre>
+          <pre><code class="language-html">*.png filter=lfs diff=lfs merge=lfs -text</code></pre>
         </section>
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
           <meta itemprop="url" content="./img/eyecatch.png">
         </div>
       </article>
-      <aside>
-        <nav class="main-breadcrumb" role="navigation" aria-label="現在位置">
-          <ol class="main-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a itemprop="item" href="https://satoyan419.com/"><span itemprop="name">Home</span></a>
-              <meta itemprop="position" content="1">
-            </li>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="location">
-              <span itemprop="name">タイトルが入ります。</span>
-              <meta itemprop="position" content="2">
-            </li>
-          </ol>
-        </nav>
-      </aside>
     </main>
     <!--#include file="sidebar.html" -->
   </div>
-  <!-- /.content -->
-
+  <!-- /.body -->
+  <nav class="main-breadcrumb" role="navigation" aria-label="現在位置">
+    <ol class="main-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="https://satoyan419.com/"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="location">
+        <span itemprop="name">タイトルが入ります。</span>
+        <meta itemprop="position" content="2">
+      </li>
+    </ol>
+  </nav>
   <!--#include file="footer.html" -->
 </body>
 </html>

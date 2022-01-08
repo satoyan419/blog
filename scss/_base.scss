@@ -5,20 +5,26 @@
 @use 'setting' as *;
 
 
+// ---------- custom properties ----------
+:root {
+  --color-base: #333;
+  --color-primary: #1f997f;
+  --color-border: #ddd;
+  --gutter-x: 15px;
+  @include mq(md) {
+    --gutter-x: 30px;
+  }
+}
+
+
 // ---------- whole ----------
 body {
-  color: $color-base;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--color-base);
   // https://ics.media/entry/200317/
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   line-height: 1.7;
   -webkit-text-size-adjust: 100%;
-}
-
-
-// ---------- custom properties ----------
-:root {
-  --gutter-x: 15px;
-  @include mq(sm) {
-    --gutter-x: 30px;
-  }
 }

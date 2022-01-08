@@ -7,17 +7,26 @@
 
 // ---------- body ----------
 .body {
-  min-height: calc(100vh - 120px);
+  flex: 1;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 40px;
   width: 100%;
   max-width: calc($width-main + var(--gutter-x) * 2);
   margin: 40px auto;
   padding: 0 var(--gutter-x);
-  @include mq(lg) {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    column-gap: 40px;
-    max-width: 1200px;
+  @include mq(md) {
     margin-block: 60px;
+  }
+  @include mq(lg) {
+    grid-template-columns: 1fr 320px;
+    max-width: 1200px;
+  }
+  &--404 {
+    width: fit-content;
+    @include mq(lg) {
+      grid-template-columns: 100%;
+    }
   }
 }
 
@@ -30,7 +39,93 @@
   }
   &--archive {
     display: grid;
-    row-gap: 60px;
+    gap: 20px;
+    @include mq(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
+// ---------- card ----------
+.main-card {
+  &__link {
+    display: block;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+    color: var(--color-base);
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  &__thumbnail {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      inset: 0;
+      background-color: #000;
+      opacity: 0;
+      content: "";
+      transition: 0.2s;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 600 / 315;
+      object-fit: cover;
+      transition: 0.2s;
+    }
+  }
+  @include mq-hover {
+    &__link:hover {
+      border-color: var(--color-primary);
+      .main-card__thumbnail {
+        &::before {
+          opacity: 0.02;
+        }
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  &__body {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    row-gap: 1em;
+    padding: 1em;
+  }
+  &__title {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  &__meta {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    svg {
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+      fill: currentColor;
+    }
+  }
+  &__date {
+    display: flex;
+    margin: 0;
+    dt, dd {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    dt {
+      &:not(:first-of-type) {
+        margin-left: 1em;
+      }
+    }
   }
 }
 
@@ -40,7 +135,7 @@
   width: 100%;
   margin: auto;
   a {
-    color: $color-primary;
+    color: var(--color-primary);
     text-decoration: none;
     @include mq-hover {
       &:hover {
@@ -52,19 +147,11 @@
   }
   &__title {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     line-height: 1.5;
-    a {
-      color: $color-base;
-      text-decoration: none;
-      @include mq-hover {
-        transition: color 0.2s;
-        &:hover {
-          color: $color-primary;
-          text-decoration: none;
-        }
-      }
+    @include mq(md) {
+      font-size: 2rem;
     }
   }
   &__meta {
@@ -119,58 +206,15 @@
     }
   }
   &__thumbnail {
-    margin-top: 30px;
-    a {
-      position: relative;
-      display: block;
-      width: fit-content;
-      margin: auto;
-      &::after {
-        position: absolute;
-        inset: 0;
-        border: 5px solid transparent;
-        content: "";
-        transition: 0.2s;
-      }
-      @include mq-hover {
-        &:hover {
-          &::after {
-            border-color: $color-primary;
-          }
-        }
-      }
-    }
+    margin-top: 4rem;
     img {
-      display: block;
       width: 100%;
-      max-width: 600px;
       height: auto;
-      margin: auto;
-    }
-  }
-  &__desc {
-    margin-top: 1em;
-    p {
-      margin: 0;
-    }
-    a {
-      display: flex;
-      align-items: center;
-      width: fit-content;
-      margin-left: auto;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 0.1em;
-    }
-    svg {
-      width: 14px;
-      height: 14px;
-      margin-left: 0.5em;
-      fill: currentColor;
     }
   }
   &__body {
     h2 {
-      margin-top: 3rem;
+      margin-top: 4rem;
       margin-bottom: 0;
       font-size: 1.5rem;
       line-height: 1.5;
@@ -183,13 +227,55 @@
     p {
       margin-block: 1rem;
     }
-    blockquote {
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.1em;
+    }
+    figure {
       margin: 1.7rem 0;
-      padding: 0.35em 1em;
-      border-left: 0.25em solid #ddd;
-      color: #444;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .wp-block-quote {
+      position: relative;
+      margin: 0;
+      padding: 1em 1em 1em 3em;
+      background-color: #f6f6f6;
+      &::before {
+        position: absolute;
+        top: 0.85em;
+        left: 0.5em;
+        display: block;
+        width: 2em;
+        height: 2em;
+        content: "";
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M18.853 9.116c-7.53 4.836-11.714 10.465-12.55 16.887C5 36 13.94 40.893 18.47 36.497 23 32.1 20.285 26.52 17.005 24.994c-3.28-1.525-5.286-.994-4.936-3.032.35-2.039 5.016-7.69 9.116-10.323a.749.749 0 0 0 .114-1.02L20.285 9.3c-.44-.572-.862-.55-1.432-.185ZM38.679 9.116c-7.53 4.836-11.714 10.465-12.55 16.887-1.303 9.997 7.637 14.89 12.167 10.494 4.53-4.397 1.815-9.977-1.466-11.503-3.28-1.525-5.286-.994-4.936-3.032.35-2.039 5.017-7.69 9.117-10.323a.749.749 0 0 0 .113-1.02L40.11 9.3c-.44-.572-.862-.55-1.431-.185Z" fill="%23ddd"/></svg>');
+      }
       p {
         margin: 0;
+      }
+      cite {
+        position: relative;
+        display: block;
+        padding-left: 1.5em;
+        font-style: normal;
+        &::before {
+          position: absolute;
+          top: 0.85em;
+          left: 0;
+          display: block;
+          width: 1em;
+          height: 1px;
+          content: "";
+          background-color: var(--color-base);
+        }
+        a {
+          color: var(--color-base);
+        }
       }
     }
     pre {
@@ -197,7 +283,6 @@
       line-height: 1.5;
     }
     code {
-      position: relative;
       font-family: "Source Code Pro", monospace;
       font-weight: 500;
     }
@@ -212,16 +297,95 @@
 }
 
 
-// ---------- breadcrumb ----------
-.main-breadcrumb {
-  margin-top: 60px;
-  &__list {
-    margin: 0;
+#toc_container {
+  margin-top: 4em;
+  padding: 1.5em 1em 1em;
+  background-color: #f6f6f6;
+  line-height: 1.5;
+  @include mq(md) {
+    margin-inline: 40px;
+    padding: 2em;
+  }
+}
+.toc_title {
+  margin: 0 !important;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.toc_list {
+  margin: 1em 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-base);
+  li {
+    position: relative;
+    margin: 0.25em 0 0.25em 2em;
+  }
+  & > li {
+    counter-increment: h2;
+    &::before {
+      position: absolute;
+      top: 0;
+      right: calc(100% + 0.5em);
+      content: counter(h2) ".";
+      color: #666;
+      white-space: nowrap;
+    }
+  }
+  ul {
     padding: 0;
     list-style: none;
+    font-size: 0.875em;
+    counter-reset: h3;
+    li {
+      margin-left: 2em;
+      counter-increment: h3;
+      &::before {
+        position: absolute;
+        top: 0;
+        right: calc(100% + 0.5em);
+        content: counter(h2) "-" counter(h3) ".";
+        color: #666;
+        white-space: nowrap;
+      }
+    }
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    @include mq-hover {
+      transition: 0.2s;
+      &:hover {
+        opacity: 0.6;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+// ---------- breadcrumb ----------
+.main-breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-block: 1px solid #ddd;
+  font-size: 0.75em;
+  background-color: #f6f6f6;
+  &__list {
+    width: 100%;
+    max-width: calc($width-main + var(--gutter-x) * 2);
+    padding: 0 var(--gutter-x);
+    list-style: none;
+    @include mq(lg) {
+      max-width: 1200px;
+    }
     li {
       display: inline;
       word-break: break-all;
+      color: #555;
       &:not(:first-child) {
         &::before {
           content: "/";
@@ -230,8 +394,42 @@
       }
     }
     a {
-      color: $color-base;
+      color: inherit;
       text-decoration: none;
+      @include mq-hover {
+        transition: 0.2s;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+
+// ---------- 404 ----------
+.main-404 {
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+    @include mq(md) {
+      font-size: 2rem;
+    }
+  }
+  &__body {
+    br {
+      display: none;
+      @include mq(md) {
+        display: inline;
+      }
+    }
+    a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.1em;
     }
   }
 }

@@ -3,13 +3,12 @@
 // ==============================
 
 
-// ---------- color ----------
-$color-base: #222;
-$color-primary: #1f997f;
-
-
 // ---------- width / height ----------
 $width-content: 1200px;
 $width-main: 740px; // 1200px - 140px - 320px
 $width-side: 320px;
-$height-header: 80px;
+$height-header: 60px;
+
+
+// ---------- z-index ----------
+$z-observer: 100;
