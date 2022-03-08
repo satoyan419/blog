@@ -43,9 +43,9 @@
 
 
   // WordPressのデフォルトのファビコンを削除
-  function wp_favicon_delete() {
+  function delete_wp_favicon() {
     exit;
   }
-  add_action( 'do_faviconico', 'wp_favicon_delete' );
+  add_action( 'do_faviconico', 'delete_wp_favicon' );
 
 ?>
