@@ -51,3 +51,13 @@
   const observer = new IntersectionObserver(showButton, options);
   observer.observe(item);
 }
+
+// lightbox
+{
+  const items = document.querySelectorAll('[data-luminous]');
+  if (items.length > 0) {
+    items.forEach( (item) => {
+      new Luminous(item, {sourceAttribute: 'data-luminous'});
+    });
+  }
+}

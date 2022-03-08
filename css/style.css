@@ -433,6 +433,10 @@ body {
   text-decoration: none;
 }
 
+.lum-lightbox-inner img.lum-img {
+  max-width: 100%;
+}
+
 .main-breadcrumb {
   display: flex;
   justify-content: center;

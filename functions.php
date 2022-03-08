@@ -19,8 +19,10 @@
 
   // styleとscriptを読み込む
   function add_styles_scripts() {
+    wp_enqueue_style( 'luminous-style', get_theme_file_uri( '/css/luminous-basic.min.css' ), array(), filemtime( get_theme_file_path( '/css/luminous-basic.min.css' ) ) );
     wp_enqueue_style( 'main-style', get_theme_file_uri( '/css/style.css' ), array(), filemtime( get_theme_file_path( '/css/style.css' ) ) );
     wp_enqueue_style( 'hljs-style', get_theme_file_uri( '/css/atom-one-dark.min.css' ), array(), filemtime( get_theme_file_path( '/css/atom-one-dark.min.css' ) ) );
+    wp_enqueue_script( 'luminous-script', get_theme_file_uri( '/js/luminous.min.js' ), array(), filemtime( get_theme_file_path( '/js/luminous.min.js' ) ) );
     wp_enqueue_script( 'main-script', get_theme_file_uri( '/js/main.js' ), array(), filemtime( get_theme_file_path( '/js/main.js' ) ) );
     wp_enqueue_script( 'hljs-script', get_theme_file_uri( '/js/highlight.min.js' ), array(), filemtime( get_theme_file_path( '/js/highlight.min.js' ) ) );
     wp_add_inline_script( 'hljs-script', 'hljs.highlightAll();' );
@@ -48,4 +50,18 @@
   }
   add_action( 'do_faviconico', 'delete_wp_favicon' );
 
+
+  // 画像にluminous属性を追加
+  function add_luminous_attribute_to_image( $content ) {
+    $content = preg_replace_callback( '/<img([^>]*)>/', function( $matches ) {
+      $match = rtrim ( $matches[1], '/' );
+      if ( strpos( $match, 'data-luminous' ) === false ) {
+        preg_match( '/src="([^"]*)"/', $match, $path );
+        $match .= ' data-luminous="' . $path[1] . '"';
+      }
+      return '<img' . $match . '>';
+    }, $content );
+    return $content;
+  }
+  add_filter( 'the_content' , 'add_luminous_attribute_to_image' );
 ?>
