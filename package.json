@@ -2,8 +2,9 @@
   "name": "blog",
   "version": "1.0.0",
   "scripts": {
-    "css": "sass scss/style.scss --style=expanded --no-source-map | postcss -o css/style.css",
-    "watch:css": "onchange scss/**/*.scss -- npm run css",
+    "css:style": "sass scss/style.scss --style=expanded --no-source-map | postcss -o css/style.css",
+    "css:editor": "sass scss/editor-style.scss --style=expanded --no-source-map | postcss -o css/editor-style.css",
+    "watch:css": "onchange scss/**/*.scss -- run-p css:style css:editor",
     "server": "browser-sync start --config bs-config.js",
     "start": "run-p watch:css server"
   },

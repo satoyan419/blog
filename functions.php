@@ -64,4 +64,16 @@
     return $content;
   }
   add_filter( 'the_content' , 'add_luminous_attribute_to_image' );
+
+
+  // エディタ用のCSSを読み込み
+  function add_editor_css() {
+    wp_enqueue_style( 'theme-editor-style', get_theme_file_uri( '/css/editor-style.css' ) );
+  }
+  add_action( 'enqueue_block_editor_assets', 'add_editor_css' );
+
+
+
+
+
 ?>
