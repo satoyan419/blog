@@ -20,7 +20,8 @@ input, button {
 
 :root {
   --color-base: #333;
-  --color-primary: #1f997f;
+  --color-primary: #25834b;
+  --color-link: #006fc6;
   --color-border: #ddd;
   --gutter-x: 15px;
 }
@@ -243,8 +244,10 @@ body {
   margin: auto;
 }
 .main-entry a {
-  color: var(--color-primary);
-  text-decoration: none;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.1em;
 }
 .main-entry__title {
   margin: 0;
@@ -297,20 +300,23 @@ body {
   height: auto;
 }
 .main-entry__body h2 {
-  margin-top: 4rem;
+  margin-top: 5rem;
   margin-bottom: 0;
   font-size: 1.5rem;
   line-height: 1.5;
+  counter-reset: step;
 }
 .main-entry__body h3 {
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 0;
   font-size: 1.25rem;
+  counter-reset: step;
 }
 .main-entry__body p {
   margin-block: 1rem;
 }
 .main-entry__body a {
+  color: var(--color-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.1em;
@@ -319,9 +325,25 @@ body {
   margin: 1.7rem 0;
 }
 .main-entry__body img {
-  display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  border: 1px solid var(--color-border);
+  transition: 0.2s;
+}
+.main-entry__body .block-step {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 2em;
+  counter-increment: step;
+}
+.main-entry__body .block-step::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.7em;
+  content: counter(step, decimal-leading-zero);
+  color: var(--color-primary);
+  font-weight: bold;
 }
 .main-entry__body .wp-block-quote {
   position: relative;
@@ -359,7 +381,7 @@ body {
   background-color: var(--color-base);
 }
 .main-entry__body .wp-block-quote cite a {
-  color: var(--color-base);
+  color: var(--color-link);
 }
 .main-entry__body pre {
   font-size: 1rem;
@@ -368,6 +390,7 @@ body {
 .main-entry__body code {
   font-family: "Source Code Pro", monospace;
   font-weight: 500;
+  white-space: pre;
 }
 .main-entry__body p code {
   padding: 0.2em 0.4em;
@@ -707,10 +730,11 @@ body {
   .main-card__link:hover .main-card__thumbnail img {
     transform: scale(1.05);
   }
-  .main-entry a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.1em;
+  .main-entry__body img {
+    cursor: zoom-in;
+  }
+  .main-entry__body img:hover {
+    border-color: var(--color-primary);
   }
   .toc_list a {
     transition: 0.2s;

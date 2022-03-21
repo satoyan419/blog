@@ -68,9 +68,20 @@
 
   // エディタ用のCSSを読み込み
   function add_editor_css() {
-    wp_enqueue_style( 'theme-editor-style', get_theme_file_uri( '/css/editor-style.css' ) );
+    wp_enqueue_style( 'theme-editor-style', get_theme_file_uri( '/css/editor-style.css' ), array(), filemtime( get_theme_file_path( '/css/editor-style.css' ) ) );
   }
   add_action( 'enqueue_block_editor_assets', 'add_editor_css' );
+
+
+  // ブロックにスタイルを追加する
+  register_block_style(
+    'core/group',
+    [
+      'name' => 'block-step',
+      'label' => '手順',
+    ]
+  );
+
 
 
 

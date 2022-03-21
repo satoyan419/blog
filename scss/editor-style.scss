@@ -1,12 +1,13 @@
 :root {
   --color-base: #333;
-  --color-primary: #1f997f;
+  --color-primary: #25834b;
+  --color-link: #006fc6;
   --color-border: #ddd;
 }
 
 .editor-styles-wrapper {
   a {
-    color: var(--color-primary);
+    color: var(--color-link);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.1em;
@@ -48,8 +49,26 @@
         background-color: var(--color-base);
       }
       a {
-        color: var(--color-primary);
+        color: var(--color-link);
       }
+    }
+  }
+  h2, h3 {
+    counter-reset: step;
+  }
+  .is-style-block-step {
+    position: relative;
+    margin-top: 2rem;
+    padding-left: 2em;
+    counter-increment: step;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.7em;
+      content: counter(step, decimal-leading-zero);
+      color: var(--color-primary);
+      font-weight: bold;
     }
   }
 }
