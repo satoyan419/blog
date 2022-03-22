@@ -20,8 +20,7 @@ input, button {
 
 :root {
   --color-base: #333;
-  --color-primary: #25834b;
-  --color-link: #006fc6;
+  --color-primary: #1f997f;
   --color-border: #ddd;
   --gutter-x: 15px;
 }
@@ -244,7 +243,7 @@ body {
   margin: auto;
 }
 .main-entry a {
-  color: var(--color-link);
+  color: var(--color-primary);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.1em;
@@ -316,7 +315,7 @@ body {
   margin-block: 1rem;
 }
 .main-entry__body a {
-  color: var(--color-link);
+  color: var(--color-primary);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.1em;
@@ -381,7 +380,7 @@ body {
   background-color: var(--color-base);
 }
 .main-entry__body .wp-block-quote cite a {
-  color: var(--color-link);
+  color: var(--color-primary);
 }
 .main-entry__body pre {
   font-size: 1rem;
