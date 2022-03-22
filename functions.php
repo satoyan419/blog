@@ -81,7 +81,13 @@
       'label' => '手順',
     ]
   );
-
+  register_block_style(
+    'core/paragraph',
+    [
+      'name' => 'block-info',
+      'label' => '補足'
+    ]
+  );
 
 
 
