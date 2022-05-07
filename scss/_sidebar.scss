@@ -52,6 +52,9 @@
         margin-top: 0.5em;
       }
     }
+    a {
+      color: var(--color-primary);
+    }
   }
   &__sns-list {
     display: flex;

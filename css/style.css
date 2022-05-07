@@ -565,6 +565,9 @@ body {
 .side-profile__desc p:nth-child(n+2) {
   margin-top: 0.5em;
 }
+.side-profile__desc a {
+  color: var(--color-primary);
+}
 .side-profile__sns-list {
   display: flex;
   justify-content: center;
