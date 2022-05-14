@@ -503,6 +503,10 @@ body {
   text-decoration: none;
 }
 
+.lum-lightbox {
+  z-index: 100;
+}
+
 .lum-lightbox-inner img.lum-img {
   max-width: 100%;
 }

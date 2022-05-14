@@ -434,6 +434,9 @@
 }
 
 // luminous lightbox
+.lum-lightbox {
+  z-index: $z-overlay;
+}
 .lum-lightbox-inner img.lum-img {
   max-width: 100%;
 }
