@@ -56,18 +56,51 @@
 }
 .editor-styles-wrapper .is-style-block-step {
   position: relative;
-  margin-top: 2rem;
-  padding-left: 2em;
+  padding: 0 0 2em 2em;
   counter-increment: step;
 }
 .editor-styles-wrapper .is-style-block-step::before {
   position: absolute;
-  top: 0;
+  top: 0.1em;
   left: 0;
-  height: 1.7em;
-  content: counter(step, decimal-leading-zero);
-  color: var(--color-primary);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  content: counter(step);
+  color: #fff;
   font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  background-color: var(--color-primary);
+  z-index: 1;
+}
+.editor-styles-wrapper .is-style-block-step::after {
+  position: absolute;
+  top: 0.1em;
+  left: 0.75em;
+  display: block;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background-color: var(--color-border);
+}
+.editor-styles-wrapper .is-style-block-step:first-child {
+  margin-top: 2em;
+}
+.editor-styles-wrapper .is-style-block-step:last-child {
+  padding-bottom: 0;
+}
+.editor-styles-wrapper .is-style-block-step:last-child::after {
+  display: none;
+}
+.editor-styles-wrapper .is-style-block-step p {
+  margin-block: 0;
+}
+.editor-styles-wrapper .is-style-block-step p:not(:first-child) {
+  margin-top: 1em;
+}
+.editor-styles-wrapper .is-style-block-step figure {
+  margin-bottom: 0;
 }
 .editor-styles-wrapper .is-style-block-info {
   position: relative;
