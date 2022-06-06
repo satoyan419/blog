@@ -245,6 +245,21 @@
         }
       }
     }
+    table {
+      margin-inline: auto;
+      border-block: 1px solid var(--color-border);
+    }
+    th, td {
+      padding: 0.5em 1em;
+      font-weight: normal;
+      text-align: left;
+      vertical-align: top;
+    }
+    tr:not(:first-child) {
+      th, td {
+        border-top: 1px solid var(--color-border);
+      }
+    }
     .is-style-block-step {
       position: relative;
       padding: 0 0 2em 2em;

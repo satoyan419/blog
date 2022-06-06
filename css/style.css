@@ -329,6 +329,19 @@ body {
   border: 1px solid var(--color-border);
   transition: 0.2s;
 }
+.main-entry__body table {
+  margin-inline: auto;
+  border-block: 1px solid var(--color-border);
+}
+.main-entry__body th, .main-entry__body td {
+  padding: 0.5em 1em;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+.main-entry__body tr:not(:first-child) th, .main-entry__body tr:not(:first-child) td {
+  border-top: 1px solid var(--color-border);
+}
 .main-entry__body .is-style-block-step {
   position: relative;
   padding: 0 0 2em 2em;
