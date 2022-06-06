@@ -61,3 +61,12 @@
     });
   }
 }
+
+// scroll hint
+{
+  new ScrollHint('.js-scroll-hint', {
+    i18n: {
+      scrollable: 'スクロールできます'
+    }
+  });
+}

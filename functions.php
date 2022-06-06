@@ -20,9 +20,11 @@
   // styleとscriptを読み込む
   function add_styles_scripts() {
     wp_enqueue_style( 'luminous-style', get_theme_file_uri( '/css/luminous-basic.min.css' ), array(), filemtime( get_theme_file_path( '/css/luminous-basic.min.css' ) ) );
+    wp_enqueue_style( 'scroll-style', get_theme_file_uri( '/css/scroll-hint.css' ), array(), filemtime( get_theme_file_path( '/css/scroll-hint.css' ) ) );
     wp_enqueue_style( 'main-style', get_theme_file_uri( '/css/style.css' ), array(), filemtime( get_theme_file_path( '/css/style.css' ) ) );
     wp_enqueue_style( 'hljs-style', get_theme_file_uri( '/css/atom-one-dark.min.css' ), array(), filemtime( get_theme_file_path( '/css/atom-one-dark.min.css' ) ) );
     wp_enqueue_script( 'luminous-script', get_theme_file_uri( '/js/luminous.min.js' ), array(), filemtime( get_theme_file_path( '/js/luminous.min.js' ) ) );
+    wp_enqueue_script( 'scroll-script', get_theme_file_uri( '/js/scroll-hint.min.js' ), array(), filemtime( get_theme_file_path( '/js/scroll-hint.min.js' ) ) );
     wp_enqueue_script( 'main-script', get_theme_file_uri( '/js/main.js' ), array(), filemtime( get_theme_file_path( '/js/main.js' ) ) );
     wp_enqueue_script( 'hljs-script', get_theme_file_uri( '/js/highlight.min.js' ), array(), filemtime( get_theme_file_path( '/js/highlight.min.js' ) ) );
     wp_add_inline_script( 'hljs-script', 'hljs.highlightAll();' );
