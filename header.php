@@ -13,6 +13,8 @@
   <meta property="og:title" content="<?php title(); ?>">
   <meta property="og:description" content="<?php description(); ?>">
   <meta property="og:image" content="<?php the_post_thumbnail_url(); ?>">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 <?php endif; ?>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
